@@ -53,6 +53,7 @@ export default function Layout({ children, home }) {
       </header>
 
       <main>{children}</main>
+      {/*Returns the "truthy" part, which in this case is the code inside the (.)*/}
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
