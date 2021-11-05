@@ -1,10 +1,14 @@
 import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
+import Head from 'next/head';
 
 // Pages that begin with [ and end with ] are dynamic routes in Next.js.
 export default function Post({ postData }) {
   return (
     <Layout>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
       {postData.title}
       <br />
       {postData.id}
