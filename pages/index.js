@@ -1,10 +1,11 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Layout, { siteTitle } from '../components/layout';
+import Date from '../components/date';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedBlogPosts } from '../lib/posts';
 
 export default function Home({ blogPosts }) {
-  console.log(blogPosts);
   return (
     <Layout home>
       <Head>
@@ -19,11 +20,11 @@ export default function Home({ blogPosts }) {
         <ul className={utilStyles.list}>
           {blogPosts.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              {title}
+              <Link href={`/posts/${id}`}>{title}</Link>
               <br />
-              {id}
-              <br />
-              {date}
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
         </ul>
@@ -32,8 +33,9 @@ export default function Home({ blogPosts }) {
   );
 }
 
-// Static Generation: exporting an async function getStaticProps() from a page tells Next.js that the date should be
-// fetched at build time. Since the result is computed at build time, request time parameters will not be available.
+// Static Generation: exporting an async function getStaticProps() from a page tells Next.js that the date
+// fetched at build time. Since the result is computed at build time, request time parameters will not be
+// available.
 export async function getStaticProps() {
   const blogPosts = getSortedBlogPosts();
   return { props: { blogPosts } };
