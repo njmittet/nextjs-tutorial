@@ -18,6 +18,8 @@
     "remark-html": "^13.0.2"
   },
   "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.3",
     "prettier": "2.4.1"
   }
 }
