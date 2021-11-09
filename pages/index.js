@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Alert from '../components/alert';
 import Layout, { siteTitle } from '../components/layout';
-import Date from '../components/date';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedBlogPosts } from '../lib/posts';
 
@@ -11,6 +11,7 @@ export default function Home({ blogPosts }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+
       <section className={utilStyles.headingMd}>
         <p>Learning Next.js by implementing the Getting Started tutorial.</p>
       </section>
@@ -29,6 +30,13 @@ export default function Home({ blogPosts }) {
           ))}
         </ul>
       </section>
+
+      <section className={utilStyles.padding1px}>
+        <h2 className={utilStyles.headingLg}>Alerts</h2>
+        <Alert type={'success'}>Success</Alert>
+        <Alert type={'error'}>Error</Alert>
+      </section>
+
     </Layout>
   );
 }
