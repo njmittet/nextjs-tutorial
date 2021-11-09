@@ -12,7 +12,7 @@ export default function Home({ blogPosts }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Page introduction goes here.</p>
+        <p>Learning Next.js by implementing the Getting Started tutorial.</p>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

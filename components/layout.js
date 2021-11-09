@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 
-const name = 'Firstname Lastname';
+const name = 'Nils Jørgen Mittet';
 export const siteTitle = 'Learning Next.js';
 
 export default function Layout({ children, home }) {
