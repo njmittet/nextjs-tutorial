@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Alerts from '../components/alerts';
+import UserList from '../components/userList';
 import Date from '../components/date';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
@@ -35,6 +36,11 @@ export default function Home({ blogPosts }) {
       <section className={utilStyles.padding1px}>
         <h2 className={utilStyles.headingLg}>Alerts</h2>
         <Alerts />
+      </section>
+
+      <section className={utilStyles.padding1px}>
+        <h2 className={utilStyles.headingLg}>Users</h2>
+        <UserList />
       </section>
     </Layout>
   );
