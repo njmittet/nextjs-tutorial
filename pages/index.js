@@ -46,7 +46,7 @@ export default function Home({ blogPosts }) {
   );
 }
 
-// Static Generation: exporting an async function getStaticProps() from a page tells Next.js that the date
+// Static Generation: exporting an async function getStaticProps() from a page tells Next.js that the data should be
 // fetched at build time. Since the result is computed at build time, request time parameters will not be
 // available.
 export async function getStaticProps() {
